@@ -16,4 +16,8 @@ public class ItemService {
     public Collection<Item> getAllItems() {
         return itemDao.findAll();
     }
+
+    public Item getItemById(int id) {
+        return null;
+    }
 }

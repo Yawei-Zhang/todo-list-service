@@ -42,4 +42,16 @@ public class ItemControllerTest {
         verify(itemService, times(1)).getAllItems();
         assertEquals(expectedItems, actualItems);
     }
+
+    @Test
+    public void testGetItemById() {
+        int id = 1;
+        Item expectItem = new Item(id, "Pray");
+        when(itemService.getItemById(id)).thenReturn(expectItem);
+
+        Item actualItem = itemController.getItemById(id);
+
+        verify(itemService, times(1)).getItemById(id);
+        assertEquals(expectItem, actualItem);
+    }
 }
